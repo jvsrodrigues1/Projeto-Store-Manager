@@ -17,3 +17,21 @@ const getSaleById = async (req, res) => {
 
   res.status(200).json(message);
 };
+
+const insertSale = async () => {
+  console.log('insert');
+};
+const updateById = async () => {
+  console.log('update');
+};
+const remove = async () => {
+  console.log('remove');
+};
+
+module.exports = {
+  getSales,
+  getSaleById,
+  insertSale,
+  updateById,
+  remove,
+};
