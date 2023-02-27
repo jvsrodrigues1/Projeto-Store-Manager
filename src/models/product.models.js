@@ -1,4 +1,4 @@
-const connection = require('./db/connection');
+const connection = require('./database/connection');
 
 const getAll = async () => {
   const [result] = await connection.execute(
@@ -27,4 +27,24 @@ const updateById = async (id, { name }) => {
     `UPDATE products SET name = ${`"${name}"`} WHERE id = (?)`,
     [id],
   );
+};
+
+const remove = async (id) => {
+  await connection.execute(
+    'DELETE FROM products WHERE id = (?)',
+    [id],
+  );
+};
+
+const search = async () => {
+  console.log('search');
+};
+
+module.exports = {
+  getAll,
+  getById,
+  insertProduct,
+  updateById,
+  remove,
+  search,
 };
