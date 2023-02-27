@@ -5,7 +5,7 @@ const sinonChai = require('sinon-chai');
 const { expect } = chai;
 chai.use(sinonChai);
 
-const productService = require('../../../src/services/product.service');
+const productService = require('../../../src/services/product.services');
 const productController = require('../../../src/controllers/product.controller');
 const { productMock, newProductMock, newProduct, products, id } = require('./mocks/product.controller.mock');
 
@@ -72,11 +72,6 @@ describe('Teste de unidade do productController', function () {
       res.json = sinon.stub().returns(res);
 
       sinon.stub(productService, 'updateById').resolves({ type: null, message: 2 });
-
-      // await productController.updateById(req, res);
-
-      // expect(res.status).to.have.been.calledWith(200);
-      // expect(res.json).to.have.been.calledWith(2);
     });
 
     it('Testa fazer a atualização de um produto pelo id sem sucesso', async function () {

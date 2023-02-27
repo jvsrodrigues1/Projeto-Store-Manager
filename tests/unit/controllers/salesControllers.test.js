@@ -5,8 +5,8 @@ const sinonChai = require('sinon-chai');
 const { expect } = chai;
 chai.use(sinonChai);
 
-const salesService = require('../../../src/services/sales.service');
-const salesController = require('../../../src/controllers/sales.controller');
+const salesService = require('../../../src/services/sales.services');
+const salesController = require('../../../src/controllers/sales.controllers');
 const { saleMock, newSaleMock } = require('./mocks/sales.controller.mock');
 
 
